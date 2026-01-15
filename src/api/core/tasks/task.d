@@ -1,12 +1,12 @@
 /**
  * Authors: initkfs
  */
-module api.core.thread.task;
+module api.core.tasks.task;
 
 import api.core.io.cstdio;
 
 import Syslog = api.core.log.syslog;
-import Critical = api.core.thread.critical;
+import Critical = api.core.tasks.critical;
 import ComContext = api.arch.riscv.hal.context;
 
 import ldc.attributes;

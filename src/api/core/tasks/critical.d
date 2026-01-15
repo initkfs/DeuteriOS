@@ -1,4 +1,4 @@
-module api.core.thread.critical;
+module api.core.tasks.critical;
 
 version (RiscvGeneric)
 {

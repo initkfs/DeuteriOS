@@ -1,9 +1,9 @@
 /**
  * Authors: initkfs
  */
-module api.core.thread.sync.spinlock;
+module api.core.tasks.sync.spinlock;
 
-import Atomic = api.core.thread.atomic;
+import Atomic = api.arch.riscv.hal.atomic;
 
 struct Lock
 {

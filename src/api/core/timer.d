@@ -104,7 +104,7 @@ private void writeIntevalToTimer(size_t mhartId)
 
                 //Interrupts.mInterruptsDisable;
 
-                import Atomic = api.core.thread.atomic;
+                import Atomic = api.core.tasks.atomic;
                 import ldc.llvmasm : __asm;
 
                 uint spinCount = 0;

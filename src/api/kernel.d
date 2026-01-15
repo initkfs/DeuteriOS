@@ -20,9 +20,9 @@ import MathStrict = api.core.math.math_strict;
 import MathRandom = api.core.math.math_random;
 import Units = api.core.util.units;
 import Bits = api.core.bits;
-import Atomic = api.core.thread.atomic;
-import Spinlock = api.core.thread.sync.spinlock;
-import Critical = api.core.thread.critical;
+import Atomic = api.arch.riscv.hal.atomic;
+import Spinlock = api.core.tasks.sync.spinlock;
+import Critical = api.core.tasks.critical;
 
 version (FeatureFloatPoint)
 {
@@ -35,7 +35,7 @@ else
 }
 
 import api.core.io.cstdio;
-import api.core.thread.task;
+import api.core.tasks.task;
 import api.core.timer;
 import api.core.trap;
 

@@ -13,7 +13,7 @@ else
 }
 
 import api.core.io.cstdio;
-import api.core.thread.task;
+import api.core.tasks.task;
 import api.core.timer;
 
 import Syslog = api.core.log.syslog;
@@ -72,7 +72,7 @@ extern (C) size_t trap_handler(size_t epc, size_t cause, size_t mtval)
                 Syslog.trace("Machine timer interrupt.");
                 timer_handler(epc, cause);
 
-                import Tasks = api.core.thread.task;
+                import Tasks = api.core.tasks.task;
 
                 Tasks.roundrobinChoose;
 
