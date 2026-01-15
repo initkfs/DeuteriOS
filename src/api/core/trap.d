@@ -72,11 +72,10 @@ extern (C) size_t trap_handler(size_t epc, size_t cause, size_t mtval)
                 Syslog.trace("Machine timer interrupt.");
                 timer_handler(epc, cause);
 
-                import Tasks = api.core.tasks.task;
+                import TaskManager = api.core.tasks.task_manager;
 
-                Tasks.roundrobinChoose;
+                TaskManager.roundrobinChoose;
 
-                //retPc = cast(size_t)&switchToOs;
                 break;
             case 8:
                 Syslog.trace("User external interrupt.");

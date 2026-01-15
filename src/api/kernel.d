@@ -24,6 +24,8 @@ import Atomic = api.hal.atomic;
 import Spinlock = api.core.tasks.sync.spinlock;
 import Critical = api.core.tasks.critical;
 
+import TaskManager = api.core.tasks.task_manager;
+
 version (FeatureFloatPoint)
 {
     import MathFloat = api.core.math.math_float;
@@ -126,7 +128,7 @@ extern (C) void dstart()
 
     runTests;
 
-    initSheduler;
+    TaskManager.initSheduler;
 
     Critical.startCritical;
 
@@ -138,8 +140,8 @@ extern (C) void dstart()
 
     Critical.endCritical;
 
-    tid = taskCreate(&task0, "task0");
-    tid1 = taskCreate(&task1, "task1");
+    tid = TaskManager.taskCreate(&task0, "task0");
+    tid1 = TaskManager.taskCreate(&task1, "task1");
     //tid2 = taskCreate(&task2);
 
     //Interrupts.mGlobalInterruptEnable;
@@ -150,7 +152,7 @@ extern (C) void dstart()
     {
         Syslog.trace("Sheduler start step");
         assert(isContinue == 0x10203040);
-        switchToFirstTask;
+        TaskManager.switchToFirstTask;
         //Syslog.trace("Sheduler end step");
     }
 }

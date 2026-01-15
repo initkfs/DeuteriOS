@@ -72,11 +72,11 @@ com_trap_check_cause:
     bne t0, t1, com_trap_vector_start
 
 com_trap_save_context:
-    la t0, currentTask
+    la t0, __currentTask
     lw t0, 0(t0)
     beqz t0, com_trap_vector_start
 
-    la t1, osTask
+    la t1, __osTask
     beq t0, t1, com_trap_vector_start
 
     sw ra, 0(t0)       # 0
@@ -135,7 +135,7 @@ com_trap_vector_start:
 	call	trap_handler #TODO from arguments
 	csrw	mepc, a0
     
-    la t0, currentTask
+    la t0, __currentTask
 
     lw t0, 0(t0)
     beqz t0, com_trap_vector_ret
@@ -251,11 +251,11 @@ trap_check_cause:
     bne t0, t1, com_trap_vector_start
 
 trap_save_context:
-    la t0, currentTask
+    la t0, __currentTask
     ld t0, 0(t0)
     beqz t0, com_trap_vector_start
 
-    la t1, osTask
+    la t1, __osTask
     beq t0, t1, com_trap_vector_start
 
     sd ra, 0(t0)       # 0/0
@@ -314,7 +314,7 @@ com_trap_vector_start:
 	call	trap_handler
 	csrw	mepc, a0
     
-    la t0, currentTask
+    la t0, __currentTask
     ld t0, 0(t0)
     beqz t0, com_trap_vector_ret
 
