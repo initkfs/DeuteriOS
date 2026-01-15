@@ -1,15 +1,7 @@
 /**
  * Authors: initkfs
  */
-module api.arch.riscv.hal.board.com.com_interrupts_constants;
-
-import Platform = api.arch.riscv.hal.platform;
-
-enum clintBase = Platform.clintBase;
-enum clintCompareRegHurtOffset = Platform.clintCompareRegHurtOffset;
-enum clintTimerRegOffset = Platform.clintTimerRegOffset;
-enum clintMtimecmpSize = Platform.clintMtimecmpSize;
-enum numCores = Platform.numCores;
+module api.arch.riscv.hal.boards.com.com_interrupts_constants;
 
 extern(C):
 

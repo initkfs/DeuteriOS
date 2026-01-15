@@ -48,9 +48,7 @@ void timerInit()
 {
     size_t id = Harts.mhartId();
 
-    import Platform = api.arch.riscv.hal.platform;
-
-    interval = ticksFromSec(startIntervalSec, Platform.mTimerHz);
+    interval = ticksFromSec(startIntervalSec, Interrupts.mTimerHz);
     assert(interval > 0);
 
     writeIntevalToTimer(id);

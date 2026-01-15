@@ -1,3 +1,3 @@
 module api.arch.riscv.hal.entry;
 
-public import api.arch.riscv.hal.board.com.com_start;
+public import api.arch.riscv.hal.boards.com.com_start;

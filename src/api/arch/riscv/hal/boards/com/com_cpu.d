@@ -1,4 +1,4 @@
-module api.arch.riscv.hal.board.com.com_cpu;
+module api.arch.riscv.hal.boards.com.com_cpu;
 
 /**
  * Authors: initkfs

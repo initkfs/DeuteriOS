@@ -1,18 +1,11 @@
 /**
  * Authors: initkfs
  */
-module api.arch.riscv.hal.board.com.com_interrupts;
+module api.arch.riscv.hal.boards.com.com_interrupts;
 
-import api.arch.riscv.hal.board.com.com_interrupts_constants;
+import api.arch.riscv.hal.boards.com.com_interrupts_constants;
 
 import ldc.llvmasm;
-
-ulong mTimeRegCmpAddr(size_t hartid) @trusted
-{
-    return clintBase + clintCompareRegHurtOffset + clintMtimecmpSize * hartid;
-}
-
-ulong mTime() @trusted => clintBase + clintTimerRegOffset;
 
 size_t mStatus() @trusted => __asm!size_t("csrr $0, mstatus", "=r");
 
