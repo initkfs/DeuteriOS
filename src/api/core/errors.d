@@ -7,7 +7,7 @@ void halt()
 {
     version (RiscvGeneric)
     {
-        import Interrupts = api.arch.riscv.hal.interrupts;
+        import Interrupts = api.hal.interrupts;
     }
     else
     {

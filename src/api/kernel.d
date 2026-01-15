@@ -4,7 +4,7 @@
 module api.kernel;
 
 //Entry point
-import api.arch.riscv.hal.entry;
+import api.hal.entry;
 
 import Tests = api.core.tests;
 import Syslog = api.core.log.syslog;
@@ -20,7 +20,7 @@ import MathStrict = api.core.math.math_strict;
 import MathRandom = api.core.math.math_random;
 import Units = api.core.util.units;
 import Bits = api.core.bits;
-import Atomic = api.arch.riscv.hal.atomic;
+import Atomic = api.hal.atomic;
 import Spinlock = api.core.tasks.sync.spinlock;
 import Critical = api.core.tasks.critical;
 
@@ -91,7 +91,7 @@ __gshared {
 
 extern (C) void dstart()
 {
-    import Interrupts = api.arch.riscv.hal.interrupts;
+    import Interrupts = api.hal.interrupts;
 
     Interrupts.mGlobalInterruptDisable;
 
@@ -111,7 +111,7 @@ extern (C) void dstart()
     trapInit;
     Syslog.info("Init traps");
 
-    // import MemoryHAL = api.arch.riscv.hal.memory;
+    // import MemoryHAL = api.hal.memory;
 
     // auto heapStartAddr = cast(void*)(MemoryHAL.get_heap_start);
     // auto heapEndAddr = cast(void*)(MemoryHAL.get_heap_end);

@@ -7,7 +7,7 @@ import api.core.io.cstdio;
 
 import Syslog = api.core.log.syslog;
 import Critical = api.core.tasks.critical;
-import ComContext = api.arch.riscv.hal.context;
+import ComContext = api.hal.context;
 
 import ldc.attributes;
 import ldc.llvmasm;

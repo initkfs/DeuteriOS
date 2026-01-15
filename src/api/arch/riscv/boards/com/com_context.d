@@ -1,4 +1,4 @@
-module api.arch.riscv.hal.boards.com.com_context;
+module api.arch.riscv.boards.com.com_context;
 
 import ldc.llvmasm;
 import ldc.attributes;

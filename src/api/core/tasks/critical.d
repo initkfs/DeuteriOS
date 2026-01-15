@@ -1,13 +1,6 @@
 module api.core.tasks.critical;
 
-version (RiscvGeneric)
-{
-    import Interrupts = api.arch.riscv.hal.interrupts;
-}
-else
-{
-    static assert(false, "Not supported platform");
-}
+import Interrupts = api.hal.interrupts;
 
 /**
  * Authors: initkfs

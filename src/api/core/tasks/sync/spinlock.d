@@ -3,7 +3,7 @@
  */
 module api.core.tasks.sync.spinlock;
 
-import Atomic = api.arch.riscv.hal.atomic;
+import Atomic = api.hal.atomic;
 
 struct Lock
 {
