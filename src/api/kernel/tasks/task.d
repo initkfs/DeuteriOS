@@ -18,6 +18,8 @@ struct Task
     int eventFlags;
     int waitEvents;
     uint yieldСount;
+    ubyte priority;
+    ubyte savedPriority;
 
     SignalSet pendingSignals;
     SignalSet waitingMask;
@@ -31,6 +33,8 @@ enum TaskState
     ready,
     running,
     sleep,
+    waitSem,
+    waitMutex,
     waitSignal,
     //need reset
     killed,
