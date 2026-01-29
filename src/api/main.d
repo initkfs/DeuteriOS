@@ -23,6 +23,7 @@ import Bits = api.kstd.bits;
 import Atomic = api.hal.atomic;
 import Spinlock = api.kernel.tasks.sync.spinlock;
 import Critical = api.kernel.tasks.critical;
+import Queues = api.kernel.utils.queues;
 
 import TaskManager = api.kernel.tasks.task_manager;
 
@@ -71,7 +72,8 @@ private void runTests()
         Bits,
         Units,
         Atomic,
-        Spinlock
+        Spinlock,
+        Queues
     );
 
     foreach (m; testModules)

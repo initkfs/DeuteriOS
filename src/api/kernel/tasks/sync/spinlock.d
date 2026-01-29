@@ -66,4 +66,8 @@ unittest
     lock.release;
     assert(lock.isUnlocked);
     assert(!lock.isLocked);
+
+    lock.acquire;
+    assert(lock.isLocked);
+    assert(!lock.isUnlocked);
 }
